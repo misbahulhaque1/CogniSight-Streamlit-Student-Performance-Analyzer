@@ -1,34 +1,22 @@
-# Student Performance & Logic Analyzer
+# CogniSight
 
-An intelligent Machine Learning classification system designed to predict student academic performance levels (Low, Medium, High) using 19 educational and behavioral features. The project implements and compares K-Nearest Neighbors (KNN), Decision Tree, and Random Forest algorithms to identify the most effective predictive model. Through data preprocessing, feature analysis, model training, and performance evaluation, the system provides valuable educational insights that can help institutions identify at-risk students and support data-driven academic decision-making.
+CogniSight is a Python and Streamlit application for exploring student-performance predictions. The bundled scikit-learn random forest accepts 13 numeric features and returns a class (High, Medium or Low) and class probabilities. Its inputs cover study habits, attendance, previous GPA, and cognitive and logic assessments.
 
-## Technologies
+## Run locally
 
-Python • Scikit-Learn • Pandas • NumPy • Matplotlib • Seaborn
+Use Python 3.12 in a virtual environment. From the repository root, run:
 
-## Machine Learning Models
+```sh
+python -m pip install -r requirements.txt
+python -m streamlit run app.py
+```
 
-* K-Nearest Neighbors (KNN)
-* Decision Tree
-* Random Forest
+Open the URL printed by Streamlit. Use the built-in demo profile to explore a prediction without entering personal information.
 
-## Evaluation Metrics
+## Deployment
 
-* Accuracy
-* Precision
-* Recall
-* F1-Score
+Build the included Dockerfile and route traffic to port 8501, or set the PORT environment variable to the port assigned by your host. The model ships with the repository and does not require an inference API key.
 
-## Classification Output
+## Model verification
 
-* Low Performance
-* Medium Performance
-* High Performance
-
-##versions 
-scikit-learn==1.6.1
-joblib==1.5.3
-numpy==2.4.4
-## Author
-
-Misbah Ul Haque
+The deployed artifact is a RandomForestClassifier. The repository contains the application and serialized model. Reproducing model selection or reporting held-out accuracy requires training data, split definitions, and evaluation artifacts. Treat its outputs as exploratory estimates.
